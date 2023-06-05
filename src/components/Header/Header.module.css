@@ -1,0 +1,18 @@
+.home {
+  padding: 20px;
+  color: black;
+  font-size: 20px;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.linkHome {
+  margin-right: 20px;
+}
+.active {
+  color: rgb(255, 200, 0);
+}
