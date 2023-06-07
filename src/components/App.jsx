@@ -1,45 +1,23 @@
 import { Routes, Route } from 'react-router-dom';
-import Header from './Header/Header';
-import Movies from './Movies/Movies';
+import Header from './Header/Navigate';
 import TrendingFilms from './Films/TrendingFilms';
-
+import PageNotFound from './PageNotFound/PageNotFound';
+import SearchMovies from './SearchedFilm/SearchMovies';
+import FilmInfo from 'pages/FilmInfo';
+import Reviews from './Reviews/Reviews';
+import Cast from './Cast/Cast';
 export const App = () => {
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<TrendingFilms />} />
-        <Route path="/movies" element={<Movies />}>
-          <Route
-            path="get-movie-details "
-            element={<h1>get-movie-details</h1>}
-          />
-          <Route
-            path="get-movie-credits "
-            element={<h1>get-movie-credits</h1>}
-          />
-          <Route
-            path="get-movie-reviews  "
-            element={<h1>get-movie-reviews</h1>}
-          />
+        <Route path="movies" element={<SearchMovies />} />
+        <Route path="movies/:id" element={<FilmInfo />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
-        {/* <Route path="/movies" element={<Movies />} />
-        </Routes> */}
-
-        {/* <Route path="/search/search-movies " element={<h1>search-movies</h1>} />
-        <Route path="/trending/get-trending " element={<h1>get-trending</h1>} />
-        // <Route
-        //   path="/movies/get-movie-details "
-        //   element={<h1>get-movie-details</h1>}
-        // />
-        // <Route
-        //   path="/movies/get-movie-credits "
-        //   element={<h1>get-movie-credits</h1>}
-        // />
-        // <Route
-        //   path="/movies/get-movie-reviews  "
-        //   element={<h1>get-movie-reviews</h1>}
-        // /> */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );

@@ -1,0 +1,37 @@
+.infoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.userScore {
+  font-weight: 600;
+}
+.button {
+  display: block;
+  margin: 20px 10px;
+  width: 130px;
+  height: 30px;
+  background-color: rgba(24, 24, 253, 0.8);
+  font-weight: 900;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  border-color: transparent;
+  outline-color: transparent;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: blue;
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.aditional {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}

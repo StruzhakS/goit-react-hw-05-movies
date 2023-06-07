@@ -1,0 +1,13 @@
+.list {
+  list-style: decimal;
+  font-size: 18px;
+}
+
+.listItem {
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+.listItem:hover {
+  color: rgb(64, 0, 255);
+  text-decoration: underline;
+}

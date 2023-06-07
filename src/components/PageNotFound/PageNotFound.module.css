@@ -1,0 +1,21 @@
+.boxImg {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.imgNF {
+  width: 100vh;
+}
+.button {
+  display: block;
+  width: 120px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 20px;
+  background-color: rgba(255, 191, 0, 0.7);
+}
+.button:hover {
+  background-color: rgba(255, 191, 0, 0.9);
+}
