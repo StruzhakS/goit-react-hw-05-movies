@@ -24,7 +24,7 @@ const FilmInfo = () => {
   return (
     filmInfo && (
       <>
-        <div>
+        <div className={s.container}>
           <Link className={s.button} to={backLinkHref}>
             ↩ Go Back
           </Link>
@@ -42,28 +42,35 @@ const FilmInfo = () => {
             <div>
               <h2>{filmInfo.title}</h2>
               <span className={s.userScore}>UserScore: </span>
-              <span> {Math.round(filmInfo.vote_average * 10)}%</span>
+              <span className={s.percent}>
+                {' '}
+                {Math.round(filmInfo.vote_average * 10)}%
+              </span>
               <h3>Overwiev</h3>
               <p>{filmInfo.overview}</p>
               <h3>Genres</h3>
-              {filmInfo.genres.map(({ name }, idx) => (
-                <li key={idx}>{name} </li>
-              ))}
+              <ul className={s.genresList}>
+                {filmInfo.genres.map(({ name }, idx) => (
+                  <li className={s.genresItem} key={idx}>
+                    {name}{' '}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className={s.aditional}>
             <p>Aditional information</p>
-            <Link to={'cast'} state={location.state}>
+            <Link to={'cast'} state={location.state} className={s.link}>
               Cast
             </Link>
-            <Link to={'reviews'} state={location.state}>
+            <Link to={'reviews'} state={location.state} className={s.link}>
               Reviews
             </Link>
           </div>
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </div>
-        <Suspense>
-          <Outlet />
-        </Suspense>
       </>
     )
   );

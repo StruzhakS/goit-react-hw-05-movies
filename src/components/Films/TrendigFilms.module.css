@@ -11,3 +11,8 @@
   color: rgb(64, 0, 255);
   text-decoration: underline;
 }
+
+.trending {
+  padding-left: 40px;
+  color: rgb(44, 44, 44);
+}

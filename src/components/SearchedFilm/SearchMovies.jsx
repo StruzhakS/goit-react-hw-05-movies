@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
 import { getSearchedFilm } from 'services/filmsAPI';
 import { SearchFilm } from 'components/SearchMovies/SearchFilm';
-
+import s from './SearchMovies.module.css';
 const SearchMovies = () => {
   const [input, setInput] = useState('');
   const [searchedFilm, setSearchedFilm] = useState([]);
@@ -28,13 +27,14 @@ const SearchMovies = () => {
   }, [searchParams]);
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <input
+          className={s.input}
           onChange={e => setInput(e.target.value)}
           type="text"
           placeholder="Pleace enter a movie to search"
         />
-        <button>Search</button>
+        <button className={s.searchBtn}>Search</button>
       </form>
       {/* {searchParams.get('query') ? ( */}
       <SearchFilm searchedFilm={searchedFilm} />
